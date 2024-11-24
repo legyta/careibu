@@ -25,7 +25,9 @@ const Login = () => {
         email,
         password
       );
+
       const user = userCredential.user;
+
       // Get the ID token from Firebase Authentication
       const idToken = await user.getIdToken();
 
@@ -47,26 +49,10 @@ const Login = () => {
         setError("Unexpected response from server.");
       }
     } catch (error) {
-      // Error handling
-      if (axios.isAxiosError(error)) {
-        setError(
-          "Login failed: " +
-            (error.response?.data?.message ||
-              error.response?.data?.error ||
-              "An unknown error occurred.")
-        );
-      } else if (error.code === "auth/user-not-found") {
-        // Handle Firebase specific errors like wrong credentials
-        setError("User not found. Please check your credentials.");
-      } else if (error.code === "auth/wrong-password") {
-        // Specific Firebase error for wrong password
-        setError("Incorrect password. Please try again.");
-      } else {
-        // General error handling
-        setError(
-          "Login failed: " + (error.message || "An unexpected error occurred.")
-        );
-      }
+      setError(
+        error.response?.data?.error ||
+          "You have entered wrong email or password"
+      );
     } finally {
       // After the request is complete stop the loading
       setLoading(false);

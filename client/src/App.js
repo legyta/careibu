@@ -1,5 +1,5 @@
 // Import necessary libraries for routing and styling
-// import "./style/styles.css";
+import "./style/styles.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 // Importing all the components for rendering the pages
 import Welcome from "./components/Welcome";

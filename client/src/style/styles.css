@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css */
+.container {
+    @apply flex flex-col items-center justify-center min-h-screen bg-gray-100;
+  }
+  
+  .heading {
+    @apply text-4xl text-primary mb-4 font-primary;
+  }
+  
+  .paragraph {
+    @apply text-lg text-gray-700 mb-6 font-secondary;
+  }
+  
+  .button {
+    @apply bg-button hover:bg-secondary text-white p-2 rounded;
+  }
+  
+  .button-back-logout {
+    @apply bg-primary hover:bg-secondary text-white p-2 rounded;
+  }
+  
+  .button-container {
+   @apply flex items-center justify-center space-x-4 p-4
+  }

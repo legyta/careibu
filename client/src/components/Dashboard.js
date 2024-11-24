@@ -30,7 +30,9 @@ export default function Dashboard() {
   return (
     <div className="container">
       <h1 className="heading">Welcome to the Careibu Community {userName}!</h1>
-      <p>You are registered with your email account of {userEmail}</p>
+      <p className="paragraph">
+        You are registered with your email account of {userEmail}
+      </p>
       <p className="paragraph">Have a great journey with us!</p>
       <div className="button-back-logout">
         <LogoutButton />
